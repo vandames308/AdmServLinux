@@ -1,55 +1,35 @@
 acl "interna" {
-2
-        
-3
+
+      
+
         127.0.0.0/8;
-4
+
         ::1/128;
-5
+
         192.168.15.0/24;
-6
-​
-7
+
+
+
 }; 
-8
+
 options { 
-9
+
         directory “/var/cache/bind”; 
-10
-​
-11
+
+
+
         forwarders {
-12
                    
-13
                 8.8.8.8 ;
-14
                 8.8.4.4 ; 
-15
-​
-16
         };
-17
-​
-18
         dnssec-validation auto;
-19
-        auth-nxdomain no;
-20
+       auth-nxdomain no;
         // onde esta 192.168.15.8 é o ip do pc
-21
         listen-on { 127.0.0.1; 192.168.15.8; };
-22
         listen-on-v6 { ::1; };
-23
         allow-query { "interna"; };
-24
         allow-recursion { "interna"; };
-25
         allow-transfer { none; };
-26
         version none;
-27
-​
-28
 }; 
