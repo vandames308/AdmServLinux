@@ -1,0 +1,13 @@
+zone "dominavans.com" {
+
+        type master;
+        file "/etc/bind/db.dominavens.com";
+
+};
+zone "15.168.192.in-addr.arpa" {
+
+        type master;
+        file "/etc/bind/db8.15.168.192";
+
+
+};
